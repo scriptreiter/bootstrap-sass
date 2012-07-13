@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = "bootstrap-sass"
+  s.name = "wp-bootstrap-sass"
   s.version = '2.1.0.0'
   s.authors = ["Thomas McDonald"]
   s.email = 'tom@conceptcoding.co.uk'
