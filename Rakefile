@@ -5,16 +5,23 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
+require 'bundler'
+Bundler::GemHelper.install_tasks
+
+
+require 'gemtools/rake_task'
+Gemtools::RakeTask.install_tasks
+
 desc 'Dumps output to a CSS file for testing'
 task :debug do
   require 'sass'
   require './lib/bootstrap-sass/compass_functions'
   require './lib/bootstrap-sass/rails_functions'
   path = './vendor/assets/stylesheets'
-  %w(bootstrap bootstrap-responsive).each do |file|
-    engine = Sass::Engine.for_file("#{path}/_#{file}.scss", syntax: :scss, load_paths: [path])
-    File.open("./#{file}.css", 'w') { |f| f.write(engine.render) }
-  end
+  # %w(bootstrap bootstrap-responsive).each do |file|
+    # engine = Sass::Engine.for_file("#{path}/_#{file}.scss", syntax: :scss, load_paths: [path])
+    # File.open("./#{file}.css", 'w') { |f| f.write(engine.render) }
+  # end
 end
 
-task default: :test
+#task default: :test
