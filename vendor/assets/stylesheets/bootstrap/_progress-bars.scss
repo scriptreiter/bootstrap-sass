@@ -1,5 +1,6 @@
-// PROGRESS BARS
-// -------------
+//
+// Progress bars
+// --------------------------------------------------
 
 
 // ANIMATIONS
@@ -8,7 +9,7 @@
 // Webkit
 @-webkit-keyframes progress-bar-stripes {
   from  { background-position: 40px 0; }
-  to    { background-position: 0 0 }
+  to    { background-position: 0 0; }
 }
 
 // Firefox
@@ -18,15 +19,15 @@
 }
 
 // IE9
-@-ms-keyframes progress-bar-stripes {
-  from { background-position: 40px 0; }
-  to   { background-position: 0 0; }
+$-ms-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
 }
 
 // Opera
-@-o-keyframes progress-bar-stripes {
-  from { background-position: 0 0; }
-  to   { background-position: 40px 0; }
+$-o-keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
 }
 
 // Spec
@@ -53,7 +54,7 @@
 // Bar of progress
 .progress .bar {
   width: 0%;
-  height: 18px;
+  height: 100%;
   color: $white;
   font-size: 12px;
   text-align: center;
@@ -112,7 +113,6 @@
 .progress-warning .bar {
   @include gradient-vertical(lighten($orange, 15%), $orange);
 }
-
 .progress-warning.progress-striped .bar {
   @include gradient-striped(lighten($orange, 15%));
 }
